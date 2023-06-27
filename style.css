@@ -7,6 +7,14 @@ h6 {
   font-weight: normal;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .search {
   padding: 6px 50px;
   margin-left: 10px;
@@ -27,6 +35,12 @@ h6 {
 .units {
   position: relative;
   top: -24px;
+}
+
+.signature {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  opacity: 0.8;
 }
 
 #weather-description {
