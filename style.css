@@ -1,0 +1,39 @@
+h5,
+p {
+  text-align: center;
+}
+
+h6 {
+  font-weight: normal;
+}
+
+.search {
+  padding: 6px 50px;
+  margin-left: 10px;
+}
+.weather-app {
+  border: solid 1px #dadde1;
+  border-radius: 5px;
+  padding: 40px;
+  margin: 50px;
+  max-width: 90%;
+}
+
+.temperature {
+  font-weight: 900px;
+  font-size: 48px;
+}
+
+.units {
+  position: relative;
+  top: -24px;
+}
+
+#weather-description {
+  text-transform: capitalize;
+}
+
+#weather-description,
+#humidity {
+  font-size: 12px;
+}

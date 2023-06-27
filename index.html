@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <h1>Weather</h1>
+
+        <form id="city-form">
+          <div class="row mb-3 g-1">
+            <div class="col-6">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter a city"
+                id="enter-city" />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                id="input-city"
+                class="form-control btn btn-secondary search" />
+            </div>
+            <div class="col-3">
+              <button
+                id="current-city"
+                class="form-control btn btn-secondary search">
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="col-3">
+            <img
+              src="Images/Sun-cloud.svg"
+              class="img-fluid rounded-start"
+              alt="Rain" />
+          </div>
+          <div class="col-3">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title" id="current-city">New York</h3>
+                <h6 class="card-title" id="current-date">Today</h6>
+                <h6>
+                  <span class="temperature" id="current-temperature">26</span
+                  ><span class="units">°C </span>
+                </h6>
+                <h6 class="card-title" id="weather-description"></h6>
+                <h6 class="card-title" id="humidity"></h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <img
+              src="Images/Weather-forecast.jpg"
+              class="img-fluid rounded"
+              alt="Weather forecast" />
+          </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-6 g-1">
+          <div class="col">
+            <div class="card h-100">
+              <img src="Images/Rain.svg" class="card-img-top" alt="Rain" />
+              <div class="card-body">
+                <h5 class="card-title">Tue</h5>
+                <p class="card-text">26°C 15°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="Images/Sun-cloud.svg"
+                class="card-img-top"
+                alt="Partly cloudy" />
+              <div class="card-body">
+                <h5 class="card-title">Wed</h5>
+                <p class="card-text">25°C 14°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="Images/Sun-cloud.svg"
+                class="card-img-top"
+                alt="Partly cloudy" />
+              <div class="card-body">
+                <h5 class="card-title">Thu</h5>
+                <p class="card-text">21°C 15°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="Images/Sun-cloud.svg"
+                class="card-img-top"
+                alt="Partly cloudy" />
+              <div class="card-body">
+                <h5 class="card-title">Fri</h5>
+                <p class="card-text">20°C 13°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="Images/Rain.svg" class="card-img-top" alt="Rain" />
+              <div class="card-body">
+                <h5 class="card-title">Sat</h5>
+                <p class="card-text">21°C 14°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="Images/Rain.svg" class="card-img-top" alt="Rain" />
+              <div class="card-body">
+                <h5 class="card-title">Sun</h5>
+                <p class="card-text">19°C 16°C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
