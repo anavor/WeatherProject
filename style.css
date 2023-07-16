@@ -1,6 +1,11 @@
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
 h5,
 p {
   text-align: center;
+  line-height: 0.8;
 }
 
 h6 {
@@ -11,10 +16,33 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a.signature:hover {
   text-decoration: underline;
 }
 
+h5.card-title {
+  font-size: 13px;
+}
+
+.active {
+  color: black;
+  cursor: default;
+}
+
+.units.active:hover {
+  text-decoration: none;
+}
+
+.card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #f5dfb8;
+}
+
+.card-body {
+  padding: 0;
+  margin: 0;
+}
 .search {
   padding: 6px 50px;
   margin-left: 10px;
@@ -22,9 +50,15 @@ a:hover {
 .weather-app {
   border: solid 1px #dadde1;
   border-radius: 5px;
-  padding: 40px;
-  margin: 50px;
-  max-width: 90%;
+  padding: 50px;
+  margin: 40px 40px 10px 40px;
+  max-width: 95%;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(245, 210, 210) 0%,
+    rgb(245, 224, 181) 62%,
+    rgb(249, 243, 179) 100.7%
+  );
 }
 
 .temperature {
@@ -38,16 +72,31 @@ a:hover {
 }
 
 .signature {
+  font-size: 12px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   opacity: 0.8;
 }
 
-#weather-description {
+.description {
+  font-size: 13px;
   text-transform: capitalize;
 }
 
-#weather-description,
-#humidity {
+.forecastDescription {
+  font-size: 10px;
+  text-transform: capitalize;
+  line-height: 10px;
+}
+
+.max,
+.min {
   font-size: 12px;
+}
+
+.min {
+  opacity: 0.6;
+}
+#weather-description {
+  text-transform: capitalize;
 }

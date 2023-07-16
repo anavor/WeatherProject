@@ -37,6 +37,13 @@ function displayWeather(response) {
   let currentIcon = document.querySelector("#icon");
   let temperature = Math.round(response.data.main.temp);
 
+  function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiId = "f3887e262c88d1158f7e2ef4998e234c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely&appid=${apiId}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+    console.log(apiUrl);
+  }
   let cityName = response.data.name;
   weatherInCity.innerHTML = cityName;
   currentTemperature.innerHTML = temperature;
@@ -54,7 +61,10 @@ function displayWeather(response) {
   currentIcon.setAttribute("alt", response.data.weather[0].description);
   // Rewrite Celsius Temperature
   celsiusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
+
 // Date
 function formatDate() {
   let now = new Date();
@@ -78,6 +88,54 @@ function formatDate() {
   let day = days[now.getDay()];
   return `${day} ${hour}:${minutes}`;
 }
+
+function formatForecastDates(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = (date = date.getDay());
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let week = response.data.daily;
+  console.log(week);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  week.forEach(function (day, index) {
+    if (index >= 1 && index <= 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+          <div class="col-2">
+            <div class="card h-100">
+              <img src="http://openweathermap.org/img/wn/${
+                day.weather[0].icon
+              }@2x.png" class="card-img-top" alt="Rain" />
+              <div class="card-body">
+                <h5 class="card-title">${formatForecastDates(day.dt)}</h5>
+                <p class="card-text"><span class = "max">  ${Math.round(
+                  day.temp.max
+                )}°C </span></p>
+                 <p class="card-text"><span class="min">${Math.round(
+                   day.temp.min
+                 )}°C</p>
+                   <p class="card-text"><span class="forecastDescription"> Humidity: 
+                     ${day.humidity} %
+                   </p>
+                      <p class="card-text"><span class="forecastDescription">  
+                     ${day.weather[0].description} 
+                   </p>
+              </div>
+            </div>
+            </div>
+            `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Transform temperature units
 function celsiusToFahrenheit(event) {
   event.preventDefault();
