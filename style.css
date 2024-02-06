@@ -1,5 +1,6 @@
 body {
   font-family: "Nunito Sans", sans-serif;
+  color: #ffffff;
 }
 
 h5,
@@ -25,7 +26,7 @@ h5.card-title {
 }
 
 .active {
-  color: black;
+  color: #ffffff;
   cursor: default;
 }
 
@@ -34,9 +35,11 @@ h5.card-title {
 }
 
 .card {
+  color: #ffffff;
   margin-top: 20px;
   margin-bottom: 20px;
-  background: #f5dfb8;
+  background: transparent;
+  border-color: #ffffff;
 }
 
 .card-body {
@@ -53,11 +56,13 @@ h5.card-title {
   padding: 50px;
   margin: 40px 40px 10px 40px;
   max-width: 95%;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(245, 210, 210) 0%,
-    rgb(245, 224, 181) 62%,
-    rgb(249, 243, 179) 100.7%
+  background: linear-gradient(
+    89.5deg,
+    rgb(209, 210, 211) -0.1%,
+    rgb(109, 114, 119) 25.1%,
+    rgb(50, 57, 64) 49.6%,
+    rgb(12, 18, 24) 74.5%,
+    rgb(0, 0, 0) 99.3%
   );
 }
 
@@ -72,6 +77,7 @@ h5.card-title {
 }
 
 .signature {
+  color: black;
   font-size: 12px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
@@ -99,4 +105,21 @@ h5.card-title {
 }
 #weather-description {
   text-transform: capitalize;
+}
+
+.btn {
+  border-radius: 2px;
+  border-color: #283739;
+}
+
+.lang {
+  color: #ffffff;
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+a.lang :hover {
+  color: blue;
 }
